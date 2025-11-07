@@ -20,7 +20,6 @@ Chaque utilisateur peut créer, gérer et interagir avec son Tamagotchi qui poss
 ### 1. Cloner le projet
 ```bash
    git clone https://github.com/MateoDubernet/Tamagotchi.git
-   cd <dossier-projet>
 ```
 
 ### 2. Aller sur le projet
