@@ -28,15 +28,15 @@ Chaque utilisateur peut créer, gérer et interagir avec son Tamagotchi qui poss
    cd Tamagotchi
 ```
 
-### 2. Installer les dépendances
+### 3. Installer les dépendances
 ```bash
     composer install
 ```
 
-### 3. Configuration
+### 4. Configuration
 Dans le fichier database/database.php ($config) changer les informations de connexions à la base de données avec celles adapter
 
-### 4. Lancement
+### 5. Lancement
 ```bash
     php -S localhost:8000 -t .
 ```
