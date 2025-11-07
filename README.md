@@ -1,4 +1,4 @@
-# Tamagotchi - Gestion et Interactions
+# Tamagotchi
 
 ## Contexte
 
