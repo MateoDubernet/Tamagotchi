@@ -12,6 +12,7 @@ Chaque utilisateur peut créer, gérer et interagir avec son Tamagotchi qui poss
 
 - Php
 - Composer
+- MySQL
 
 ---
 
