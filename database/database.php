@@ -5,19 +5,26 @@ use PDO;
 use PDOStatement;
 
 class Database {
-    private static array $config = [
-        "host" => "localhost",
-        "port" => 3306,
-        "username" => "root",
-        "password" => "root",
-        "engine" => "mysql",
-    ];
 
-    private static string $database = "tamagotchi";
-    private static ?PDO $pdo = null;
+    private static string $database;
+    private static array $config;
+    private static ? PDO $pdo = null;
+
+    private static function init() {
+        self::$database = 'tamagotchi';
+        self::$config = [
+            "engine"   => "mysql",
+            "host"     => getenv('DB_HOST') ?: 'localhost',
+            "port"     => "3306",
+            "username" => getenv('DB_USER') ?: 'root',
+            "password" => getenv('DB_PASS') ?: 'root',
+        ];
+    }
 
     public static function connect(): PDO {
         if (self::$pdo === null) {
+            self::init();
+
             $dsn = sprintf(
                 "%s:host=%s;port=%s;dbname=%s;charset=utf8mb4",
                 self::$config["engine"],
@@ -60,6 +67,6 @@ class Database {
 
     public static function useDatabase(string $databaseName): void {
         self::$database = $databaseName;
-        self::$pdo = null; // forcera la reconnexion à la prochaine query
+        self::$pdo = null;
     }
 }

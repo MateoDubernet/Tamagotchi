@@ -8,9 +8,13 @@ $databaseName = 'tamagotchi';
 
 // Création de la base via PDO direct
 $pdo = new PDO(
-    sprintf("mysql:host=%s;port=%s", 'localhost', 3306),
-    'root',
-    'root',
+    sprintf(
+        "mysql:host=%s;port=%s",
+        getenv('DB_HOST') ?: 'localhost',
+        3306
+    ),
+    getenv('DB_USER') ?: 'root',
+    getenv('DB_PASS') ?: 'root',
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 $pdo->exec("CREATE DATABASE IF NOT EXISTS `$databaseName` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
@@ -26,10 +30,10 @@ function createTable(string $tableName, array $columns, array $constraints = [])
         $colsSql[] = "`$col` $type";
     }
 
-    $sql = "CREATE TABLE IF NOT EXISTS `$tableName` (" 
-         . implode(", ", $colsSql)
-         . (!empty($constraints) ? ", " . implode(", ", $constraints) : "")
-         . ")";
+    $sql = "CREATE TABLE IF NOT EXISTS `$tableName` ("
+        . implode(", ", $colsSql)
+        . (!empty($constraints) ? ", " . implode(", ", $constraints) : "")
+        . ")";
     Database::query($sql);
 }
 
@@ -44,5 +48,3 @@ foreach ($tables as $name => $file) {
     $tableConfig = require $file;
     createTable($name, $tableConfig['columns'], $tableConfig['constraints']);
 }
-
-echo "Base et tables créées avec succès !\n";

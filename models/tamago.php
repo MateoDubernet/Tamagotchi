@@ -1,14 +1,21 @@
 <?php
 namespace Models;
 
-use PDO;
-
 class Tamago extends Model {
     protected static string $table = "tamago";
     protected static string $idColumn = "id";
     protected static array $columns = [
-        "name", "niveaux", "faim", "soif", "sommeil",
-        "ennui", "etat", "user_id", "actions", "born_at", "died_at"
+        "name",
+        "niveaux",
+        "faim",
+        "soif",
+        "sommeil",
+        "ennui",
+        "etat",
+        "user_id",
+        "actions",
+        "born_at",
+        "died_at"
     ];
 
     public static function getByUserId(int $user_id): array {

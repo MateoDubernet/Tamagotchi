@@ -15,6 +15,8 @@ class TamagoService {
             throw new \Exception("Utilisateur introuvable");
         }
 
+
+
         $faker = Factory::create();
         $tamago = new Tamago();
         $tamago->name = $faker->firstName;
@@ -26,6 +28,7 @@ class TamagoService {
         $tamago->etat = "vivant";
         $tamago->user_id = $user->id;
         $tamago->actions = 0;
+        $tamago->born_at = date('Y-m-d H:i:s');
         $tamago->insert();
 
         return $tamago;

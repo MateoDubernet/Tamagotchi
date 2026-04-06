@@ -26,9 +26,9 @@ include __DIR__ . '/../views/layouts/header.php';
     <?php if (!empty($tamagos)): ?>
         <?php foreach ($tamagos as $tamago): ?>
             <?php if ($tamago->etat === "mort"): ?>
-                <?php 
+                <?php
                     $isDead = true;
-                    include __DIR__ . '/../views/components/tamagoCard.php'; 
+                    include __DIR__ . '/../views/components/tamagoCard.php';
                 ?>
             <?php endif; ?>
         <?php endforeach; ?>
