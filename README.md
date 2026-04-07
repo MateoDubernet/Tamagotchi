@@ -4,10 +4,9 @@
 Ceci est un projet réaliser en groupe dans le cadre d'un devoir maison, il s'agit d'une implémentation d'un système de **Tamagotchi virtuel**.
 Chaque utilisateur peut créer, gérer et interagir avec son Tamagotchi qui possède différents états.
 
-### Architecture
-- **Backend** : PHP.
-- **Base de données** : MySQL.
-- **Infrastructure** : Entièrement conteneurisé avec Docker.
+### Stack Technique
+- **PHP**.
+- **Docker**.
 
 ---
 
@@ -20,16 +19,16 @@ Chaque utilisateur peut créer, gérer et interagir avec son Tamagotchi qui poss
 ### 2. Lancement (Docker)
 **Prérequis :** [Docker Desktop](https://www.docker.com/products/docker-desktop) installé et lancé.
 
+[!IMPORTANT]
+Assurez-vous que le port 80 n'est pas déjà utilisé par une autre application sur votre machine avant de lancer le conteneur.
+
 ```bash
     cd ./Tamagotchi
     docker-compose up --build
 ```
 
 ### 3. Accès
-- **Site Web** : http://localhost (Port 80)
-
-[!IMPORTANT]
-Assurez-vous que le port 80 n'est pas déjà utilisé par une autre application sur votre machine avant de lancer le conteneur.
+Ouvrir un navigateur web et aller à l'adresse: http://localhost
 
 ---
 

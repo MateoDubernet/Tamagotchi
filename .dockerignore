@@ -1,0 +1,17 @@
+# Dependencies
+vendor/
+
+# Docker files
+docker-compose.yml
+Dockerfile
+
+# Version control
+.git/
+.gitignore
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
