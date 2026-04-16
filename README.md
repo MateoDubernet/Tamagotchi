@@ -5,8 +5,8 @@ Ceci est un projet réaliser en groupe dans le cadre d'un devoir maison, il s'ag
 Chaque utilisateur peut créer, gérer et interagir avec son Tamagotchi qui possède différents états.
 
 ### Stack Technique
-- **PHP**.
-- **Docker**.
+- **PHP**
+- **Docker**
 
 ---
 
